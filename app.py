@@ -1,7 +1,7 @@
 from textblob import TextBlob
 import pandas as pd
 import streamlit as st
-import cleantext
+import cleantext as clean
 import emoji
 
 st.title("Sentiment Web Analyzer")
@@ -29,7 +29,7 @@ with st.expander("Analyze Your Text"):
     pre = st.text_input('Clean Your Text: ')
     if pre:
         st.write(cleantext.clean(pre, clean_all= False, extra_spaces=True ,
-                                 stopwords=True ,lowercase=True ,numbers=True , punct=True))
+            stopwords=True ,lowercase=True ,numbers=True , punct=True))
 
 with st.expander('Analyze Excel files'):
     st.write("_**Note**_ : Your file must contain the column Name'Tweets' that contain the text to be analyzed.")
